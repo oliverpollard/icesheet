@@ -2,6 +2,24 @@ ICESHEET - a program to create ice sheet reconstructions
 
 Written by Evan J. Gowan (evangowan@gmail.com)
 
+-------------------------
+Update by Oliver G. Pollard (oliver.pollard1@gmail.com):
+-------------------------
+
+The original program has been modified to change the way data is inputted and to incorporate the reading of netCDF files. The layout of the program has also been streamlined and simplified. The program no longer requires fields to be provided in a binary format. The input arguments now take the following format:
+```
+./icesheet elevation_interval minimum_spacing margin_file shearstress_nc topography_nc output_directory output_suffix
+```
+elevation_interval: elevation interval, in meters
+minimum_spacing: minimum spacing for contours, in meters
+margin_file: xy margin file
+shearstress_nc: shearstress netcdf, with a datavariable named 'z', in Pa
+topography_nc: topography netcdf, with a datavariable named 'z', in meters
+output_directory: directory to output the xyz thickness file
+output_suffix: the suffix to use for the output file (useful when running the program for multiple polygons that make up a single margin)
+
+The program can be compiled using the source/compile.sh file.
+
 -------------------
 Version 2.0:
 -------------------
